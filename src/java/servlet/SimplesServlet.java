@@ -42,18 +42,55 @@ public class SimplesServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Calculo de Juros Simples:</h1>");
             //Montante = Capital.(1+(taxa de juros.parcelas))
-            float Mont, cap, taxa, par;
             
-            String html = "<form action='juros-simples.php' method='GET'>"
-                        + "<input type='text' value='cap'>" 
-                        + "<input type='submit' value='Enviar'>" 
-                        + "</form>";
-
-            out.println (html);
- 
-            String a = request.getParameter("taxa");
-         System.out.println(a);
-            
+            //cap.(1+(taxa.par)
+            double Mont=0;
+            double cap=0;
+            double taxa=0;
+            double par=0;
+            String mensagem="";
+            out.println("<form>");
+            out.println("<p>Capital: <input type='text' name='cap'> ");
+            out.println("<p>Taxa de Juros (% ao mês): <input type='text' name='taxa'> ");
+             out.println("<p>Tempo total (meses): <input type='text' name='par'>");
+             out.println("<p><input type='submit' value='Calcular'></p>");
+             out.println("</form>");
+                                    
+             try {
+                 if (request.getParameter("cap") != null)
+                    cap = Double.parseDouble(request.getParameter("cap"));
+                 
+                    
+             }
+             catch(Exception ex){
+                    mensagem += "Valor do capital inválido <br>";
+                   
+                    
+             }
+             
+             try {
+                 if (request.getParameter("taxa") != null)
+                    taxa = Double.parseDouble(request.getParameter("taxa"));
+                    
+             }
+             catch(Exception ex){
+                    mensagem += "Valor da taxa de juros inválido<br>";
+                    
+             }
+             
+             try {
+                 if (request.getParameter("par") != null)
+                    par = Double.parseDouble(request.getParameter("par"));
+                   
+             }
+             catch(Exception ex){
+                    mensagem += "Valor das parcelas inválido <br>";
+                   
+             }
+             Mont = (cap*(1+((taxa/100)*par)));
+             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
+             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
+             out.println("<h3 style='color:red;'>"+Mont+"</h3>");
             out.println("</body>");
             out.println("</html>");
         }
