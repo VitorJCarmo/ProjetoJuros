@@ -9,11 +9,40 @@ and open the template in the editor.
         <title>Projeto Juros </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            ul{
+    list-style-type: none;
+    margin: 2px;
+    padding: 2px;
+    overflow: hidden;
+    background-color: #333;
+        text-align: center;
+            }
+            li {
+                    text-align: center;
+       display: inline;
+}
+
+li a {
+    color: white;
+    text-align: center;
+    padding: 4px 4px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: FireBrick;
+}
+        </style>
     </head>
     <body>
-        <h1>Projeto POO Juros</h1>
-        <a href="home.html">HomeServlet</a><br>
-        <a href="juros-simples.html">SimplesServlet</a><br>
-        <a href="juros-composto.html">CompostoServlet</a><br>
+        <h1 align="center">Projeto POO Juros</h1>
+        <div id="menu">
+            <ul>
+                <li><a href="home.html">Home  </a></li>
+                <li><a href="juros-simples.html" >Juros Simples  </a></li>
+                <li><a href="juros-composto.html" >Juros Composto</a></li>
+            </ul>
+        </div>
     </body>
 </html>

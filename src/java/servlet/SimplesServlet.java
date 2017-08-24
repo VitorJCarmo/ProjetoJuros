@@ -39,8 +39,22 @@ public class SimplesServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet SimplesServlet</title>");            
             out.println("</head>");
+            out.println("<style>");
+            out.println("ul{list-style-type: none;margin: 2px;padding: 2px;overflow: hidden;background-color: #333;text-align: center;}");
+            out.println("li {text-align: center;display: inline;}");
+            out.println("a {color: white;text-align: center;padding: 4px 4px;text-decoration: none;}");
+            out.println ("li a:hover {background-color: FireBrick;}");
+            out.println("#main{margin-left:600px;margin-top:200px}");
+            out.println("</style>");
             out.println("<body>");
-            out.println("<h1>Calculo de Juros Simples:</h1>");
+            out.println("<h1 align='center'>Cálculo de Juros Simples</h1>");
+            out.println("<div id='menu'>");
+            out.println("<ul>");
+            out.println("<li><a href='home.html'>Home  </a></li>");
+            out.println("<li><a href='juros-simples.html' >Juros Simples  </a></li>");
+            out.println("<li><a href='juros-composto.html' >Juros Composto</a></li>");
+            out.println("</ul>");
+            out.println("</div>");
             //Montante = Capital.(1+(taxa de juros.parcelas))
             
             //cap.(1+(taxa.par)
@@ -89,8 +103,8 @@ public class SimplesServlet extends HttpServlet {
              }
              Mont = (cap*(1+((taxa/100)*par)));
              out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
-             out.println("<h3 style='color:red;'>"+Mont+"</h3>");
-             out.println("<h3><a href='home.html'>Voltar</h3>");
+             out.println("<h3 style='color:red;'>Montante:  "+Mont+"</h3>");
+             out.println("<h3><a href='index.html'>Voltar</h3>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -36,17 +36,22 @@ public class HomeServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<head>"); 
+            out.println("<style>");
+            out.println("<title>Home Servlet</title>");  
+            out.println("#main{ margin-left: 500px}");
+            out.println("</style>");   
             out.println("</head>");
             out.println("<body>");
-            out.println("<h5><a href='index.html'>Voltar</a></h5>");
+            out.println("<div id='main'>");
             out.println("<h1>Grupo Projeto POO:</h1>");
             out.println("<h3>Ernandes Roberto Papa Braga</h3>");
             out.println("<h3>Karin Cristine Martins Santos</h3>");
             out.println("<h3>Stanislaw Manta Wieliczko</h3>");
             out.println("<h3>Vitor Jesus do Carmo</h3>");
             out.println("<h3>Vinicius Lima de Almeida</h3>");
+            out.println("<h5><a href='index.html' >Ir para index</a></h5>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
