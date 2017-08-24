@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author estagio
  */
-@WebServlet(name = "HomeServlet", urlPatterns = {"/home.html"})
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "SimplesServlet", urlPatterns = {"/juros-simples.html"})
+public class SimplesServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,16 +37,23 @@ public class HomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<title>Servlet SimplesServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h5><a href='index.html'>Voltar</a></h5>");
-            out.println("<h1>Grupo Projeto POO:</h1>");
-            out.println("<h3>Ernandes Roberto Papa Braga</h3>");
-            out.println("<h3>Karin Cristine Martins Santos</h3>");
-            out.println("<h3>Stanislaw Manta Wieliczko</h3>");
-            out.println("<h3>Vitor Jesus do Carmo</h3>");
-            out.println("<h3>Vinicius Lima de Almeida</h3>");
+            out.println("<h1>Calculo de Juros Simples:</h1>");
+            //Montante = Capital.(1+(taxa de juros.parcelas))
+            float Mont, cap, taxa, par;
+            
+            String html = "<form action='juros-simples.php' method='GET'>"
+                        + "<input type='text' value='cap'>" 
+                        + "<input type='submit' value='Enviar'>" 
+                        + "</form>";
+
+            out.println (html);
+ 
+            String a = request.getParameter("taxa");
+         System.out.println(a);
+            
             out.println("</body>");
             out.println("</html>");
         }
@@ -64,7 +71,11 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         processRequest(request, response);
+        
+         
     }
 
     /**
@@ -88,7 +99,9 @@ public class HomeServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
+        
         return "Short description";
+       
     }// </editor-fold>
 
 }
