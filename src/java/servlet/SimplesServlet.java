@@ -89,8 +89,8 @@ public class SimplesServlet extends HttpServlet {
              }
              Mont = (cap*(1+((taxa/100)*par)));
              out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
-             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
              out.println("<h3 style='color:red;'>"+Mont+"</h3>");
+             out.println("<h3><a href='home.html'>Voltar</h3>");
             out.println("</body>");
             out.println("</html>");
         }
