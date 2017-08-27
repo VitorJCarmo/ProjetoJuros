@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DecimalFormat; 
 
 /**
  *
@@ -33,20 +34,18 @@ public class CompostoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            double m, c, i, t, total;
+            double m, c, i, t, ctotal,j,jant,jt,mt;
+            DecimalFormat df = new DecimalFormat("#,###.00");
+            
+            ctotal = m = c = i = t = j = jant = jt = mt = 0;
            
-            total = 0;
-            m = 0;
-            c = 0;
-            i = 0;
-            t = 0;  
             
             String mensagem;
             mensagem = "";
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CompostoServlet</title>");            
+            out.println("<title>Juros Compostos</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Cálculo de Juros Compostos</h1>");
@@ -65,7 +64,7 @@ public class CompostoServlet extends HttpServlet {
                    
             }
             catch(Exception ex){
-                   mensagem += "Valor inválido de capital <br>";
+                   mensagem += "Valor inválido de capital inicial! <br>";
                   
                    
             }
@@ -73,10 +72,11 @@ public class CompostoServlet extends HttpServlet {
             try {
                 if (request.getParameter("i") != null)
                    i = Double.parseDouble(request.getParameter("i"));
+                   i = i/100;
                    
             }
             catch(Exception ex){
-                   mensagem += "Valor inválido de taxa de juros <br>";
+                   mensagem += "Valor inválido de taxa de juros! <br>";
                    
             }
             
@@ -86,7 +86,7 @@ public class CompostoServlet extends HttpServlet {
                   
             }
             catch(Exception ex){
-                   mensagem += "Valor inválido de tempo <br>";
+                   mensagem += "Valor inválido de tempo! <br>";
                    
             }
             
@@ -94,22 +94,31 @@ public class CompostoServlet extends HttpServlet {
             out.println("<h3><a href='index.html'>Voltar</a></h3>");
             out.println("</div>");
             
-            
+            out.println("<div>");
             out.println("<table table border='1'>");
-            out.println("<tr><th>Mês</th> <th>Montante</th></tr>");
-            
-           
+            out.println("<tr><th>Mês</th> <th>Juros</th> <th>Montante</th></tr>");
             
             for (int ct = 1; ct <= t; ct++){
-              m = c * Math.pow((1+i),ct);
-              out.println("<tr><td>"+ ct +"</td><td>"+m+"</td></tr>");
-              total += m; 
-              
+                ctotal = c * Math.pow((1+i),ct);
+                j = ctotal - c;
+                out.println("<tr><td>"+ct+"</td> <td>R$ "+ df.format(j - jant) +" </td><td>R$ "+ df.format(ctotal)+"</td>");
+                mt += ctotal;
+                
+                jt += j - jant;
+                jant = j;
+                
+                if (ct==t) {
+                    out.println("<tr><td>Total:</td><td>R$ "+df.format(jt)+"</td><td>R$ "+df.format(mt)+"</td>");
+                }
             }
+                
+                
             
+            
+           
             out.println("<table>");
-            out.println("<h3>Total:"+total+"</h3>");
-            
+
+            out.println("</div>");
            
             
             
