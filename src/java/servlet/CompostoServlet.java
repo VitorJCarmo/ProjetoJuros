@@ -51,49 +51,29 @@ public class CompostoServlet extends HttpServlet {
             out.println("<h1>Cálculo de Juros Compostos</h1>");
             out.println("<div style='float:left; margin-right: 200px;'>");
             out.println("<form>");
-            out.println("<p>Capital: <input type='text' name='c'> ");
-            out.println("<p>Taxa de Juros (% ao mês): <input type='text' name='i'> ");
-            out.println("<p>Tempo total (meses): <input type='text' name='t'>");
-            out.println("<p><input type='submit' value='Calcular'></p>");
+            out.println("<p>Capital: <input required type='number' min='0' name='c'> ");
+            out.println("<p>Taxa de Juros (% ao mês): <input required type='number' min='0' name='i'> ");
+            out.println("<p>Tempo total (meses): <input required type='number' min='1' name='t'>");
+            out.println("<p><input required type='submit' value='Calcular'></p>");
             out.println("</form>");
-                                   
+   
+            //Tratamento de erros e atribuição dos valores às variáveis
             try {
-                if (request.getParameter("c") != null)
+                if (request.getParameter("c") != null && request.getParameter("i") != null && request.getParameter("t") != null )
                    c = Double.parseDouble(request.getParameter("c"));
-                   
-                   
-            }
-            catch(Exception ex){
-                   mensagem += "Valor inválido de capital inicial! <br>";
-                  
-                   
-            }
-            
-            try {
-                if (request.getParameter("i") != null)
                    i = Double.parseDouble(request.getParameter("i"));
-                   i = i/100;
-                   
-            }
-            catch(Exception ex){
-                   mensagem += "Valor inválido de taxa de juros! <br>";
-                   
-            }
-            
-            try {
-                if (request.getParameter("t") != null)
                    t = Double.parseDouble(request.getParameter("t"));
-                  
+                   i = i/100;
             }
-            catch(Exception ex){
-                   mensagem += "Valor inválido de tempo! <br>";
-                   
+            catch (Exception ex) {
+                out.println("<h3 style='color:red'>Preencha os campos corretamente!</h3>");
             }
-            
+
             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
             out.println("<h3><a href='index.html'>Voltar</a></h3>");
             out.println("</div>");
             
+            //Exibição da tabela
             out.println("<div>");
             out.println("<table table border='1'>");
             out.println("<tr><th>Mês</th> <th>Juros</th> <th>Montante</th></tr>");
@@ -104,6 +84,8 @@ public class CompostoServlet extends HttpServlet {
                 out.println("<tr><td>"+ct+"</td> <td>R$ "+ df.format(j - jant) +" </td><td>R$ "+ df.format(ctotal)+"</td>");
                 mt += ctotal;
                 
+                //jant = juros anterior;
+                //jt = juros total
                 jt += j - jant;
                 jant = j;
                 
@@ -111,18 +93,9 @@ public class CompostoServlet extends HttpServlet {
                     out.println("<tr><td>Total:</td><td>R$ "+df.format(jt)+"</td><td>R$ "+df.format(mt)+"</td>");
                 }
             }
-                
-                
-            
-            
-           
+                       
             out.println("<table>");
-
-            out.println("</div>");
-           
-            
-            
-            
+            out.println("</div>");            
             out.println("</body>");
             out.println("</html>");
         }
