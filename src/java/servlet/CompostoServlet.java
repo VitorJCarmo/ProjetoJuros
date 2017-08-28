@@ -51,9 +51,9 @@ public class CompostoServlet extends HttpServlet {
             out.println("<h1>Cálculo de Juros Compostos</h1>");
             out.println("<div style='float:left; margin-right: 200px;'>");
             out.println("<form>");
-            out.println("<p>Capital: <input required type='number' min='0' name='c'> ");
-            out.println("<p>Taxa de Juros (% ao mês): <input required type='number' min='0' name='i'> ");
-            out.println("<p>Tempo total (meses): <input required type='number' min='1' name='t'>");
+            out.println("<p>Capital: <input required type='number' min='0' name='c' step='0.01'> ");
+            out.println("<p>Taxa de Juros (% ao mês): <input required type='number' min='0' name='i' step='0.01'> ");
+            out.println("<p>Tempo total (meses): <input required type='number' min='1' name='t' step='0.01'>");
             out.println("<p><input required type='submit' value='Calcular'></p>");
             out.println("</form>");
    
