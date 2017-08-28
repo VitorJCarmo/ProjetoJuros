@@ -48,6 +48,23 @@ public class CompostoServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet CompostoServlet</title>");            
             out.println("</head>");
+            out.println("<style>");
+            out.println("ul{list-style-type: none;margin: 2px;padding: 2px;overflow: hidden;background-color: #333;text-align: center;}");
+            out.println("li {text-align: center;display: inline;}");
+            out.println("a {color: white;text-align: center;padding: 4px 4px;text-decoration: none;}");
+            out.println ("li a:hover {background-color: FireBrick;}");
+            out.println("#main{margin-left:600px;margin-top:200px}");
+            out.println("</style>");
+            out.println("<body>");
+            out.println("<h1 align='center'>Cálculo de Juros Simples</h1>");
+            out.println("<div id='menu'>");
+            out.println("<ul>");
+            out.println("<li><a href='home.html'>Home  </a></li>");
+            out.println("<li><a href='juros-simples.html' >Juros Simples  </a></li>");
+            out.println("<li><a href='juros-composto.html' >Juros Composto</a></li>");
+            out.println("</ul>");
+            out.println("</div>");
+            
             out.println("<body>");
             out.println("<h1>Cálculo de Juros Compostos</h1>");
             out.println("<div style='float:left; margin-right: 200px;'>");
