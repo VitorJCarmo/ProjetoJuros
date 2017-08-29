@@ -48,7 +48,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<h3 align='center'>Ernandes Roberto Papa Braga</h3>");
             out.println("<h3 align='center'>Karin Cristine Martins Santos</h3>");
             out.println("<h3 align='center'>Stanislaw Manta Wieliczko</h3>");
-            out.println("<h3 align='center'>Vitor Jesus do Carmo</h3>");
+            out.println("<h3 align='center'>Vitor Jesus do Carmo | RA : 1290481613045</h3>");
             out.println("<h3 align='center'>Vinicius Lima de Almeida</h3>");
             out.println("<h5 align='center'><a href='index.html' >Ir para index</a></h5>");
             out.println("</div>");
