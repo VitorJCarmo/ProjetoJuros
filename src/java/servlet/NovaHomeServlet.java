@@ -37,7 +37,8 @@ public class NovaHomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NovaHomeServlet</title>");      
+            out.println("<title>Servlet NovaHomeServlet</title>"
+                    + "<link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">");      
             out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
             out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/styleHome.css' />");
             out.println("<meta charset=\"utf-8\">\n" +
@@ -54,13 +55,13 @@ public class NovaHomeServlet extends HttpServlet {
                             "    <div class=\"navbar-collapse collapse\" id=\"collapsingNavbar3\">\n" +
                             "        <ul class=\"navbar-nav mx-auto w-100 justify-content-center\">\n" +
                             "            <li class=\"nav-item active\">\n" +
-                            "                <a class=\"nav-link\" href=\"#\">Home</a>\n" +
+                            "                <a class=\"nav-link\" href=\"home.html\">Home</a>\n" +
                             "            </li>\n" +
                             "            <li class=\"nav-item\">\n" +
-                            "                <a class=\"nav-link\" href=\"#\">Juros Simples</a>\n" +
+                            "                <a class=\"nav-link\" href=\"juros-simples.html\">Juros Simples</a>\n" +
                             "            </li>\n" +
                             "            <li class=\"nav-item\">\n" +
-                            "                <a class=\"nav-link\" href=\"#\">Juros Composto</a>\n" +
+                            "                <a class=\"nav-link\" href=\"juros-composto.html\">Juros Composto</a>\n" +
                             "            </li>\n" +
                             "        </ul>\n" +
                             "        <ul class=\"nav navbar-nav ml-auto w-100 justify-content-end\">\n" +
@@ -74,26 +75,79 @@ public class NovaHomeServlet extends HttpServlet {
             out.println("<div class='container-fluid'>"
                     + "<div class='container'>"
                     + "<h2>Juros Simples</h2>"
-                    + "<p>Lorem ipsum dolor sit amet, cu meis doming audire usu, ocurreret adolescens mea et. Eu pro latine eripuit. Ex ius impedit delectus, numquam epicurei id cum. Iudicabit mnesarchum cu nec. Eu posidonium repudiandae duo, qui torquatos persecuti interpretaris ei. Mei option constituam et, at vix quidam noluisse.\n" +
-"                   \n" +
-"                   Ubique civibus in his. Eos suas hinc vocent in, ea alii nominati ullamcorper usu, sit insolens definitiones ad. Erat delenit eos no, eos cibo utamur et. Eum simul recteque consulatu cu, usu graecis alienum neglegentur ne, nibh docendi duo ad. Dicta facilis contentiones ne his, tempor conclusionemque ex ius.</p>"
+                    + "<p>O    O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. Valor Principal ou simplesmente principal é o valor inicial emprestado ou aplicado, antes de somarmos os juros. </p>"
 
                     + "<p><a href=\"#\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Simples</a></p>"
 
-                    + "<h2>Juros Compostos</h2>"
-                    + "<p>Lorem ipsum dolor sit amet, choro fabulas consectetuer has ne, est at mundi theophrastus. Per prima posse nostrud ea. Quo ea eros volutpat. Ei mutat utinam vix, sit graeco patrioque ne. Ad pro accusam dolores, eos veritus honestatis ut.\n" +
+                    + "<h2>Juros Composto</h2>"
+                    + "<p>Juros compostos são os juros de um determinado período somados ao capital para o cálculo de novos juros nos períodos seguintes.\n" +
                         "\n" +
-                        "Ut vim porro aliquam similique, quo mazim zril persequeris te. Fierent pertinacia assueverit cu duo. Nam cu etiam putant, vel ei amet iusto similique. Alienum urbanitas ius ut. Aeque dissentias nam in, aperiam suavitate scriptorem duo at, elit causae delicata sea ei.\n" +
+                        "Juros compostos fazem parte de disciplinas e conceitos de matemática financeira, e esses juros são representados através de um percentual.<br><br>\n" +
                         "\n" +
-                        "Per ex modo facer dissentiet, eam in eros nominati scriptorem. Usu eu diam modus veniam. Posse tantas salutatus eam eu, errem quaerendum eos at, aperiri praesent ad ius. Ut aperiri repudiare prodesset per, no diam cetero lobortis cum. Laboramus dissentiunt at quo. Ex nibh gubergren sit, utinam mollis habemus ut his.\n" +
+                        "A fórmula de juros compostos pode ser escrita através da remuneração cobrada pelo empréstimo de dinheiro. O valor da dívida é sempre corrigido e a taxa de juros é calculada sobre esse valor.\n" +
                         "\n" +
-                        "No vix viderer recusabo erroribus, eos ex sumo illud. Et amet ignota blandit eam. No novum noster vivendo vim, cum at tation impetus consequat. Ferri autem eu nec. Id paulo periculis vim. Tollit iuvaret in eos, sea persius euripidis eu, ea vim sententiae definiebas. No agam homero labores has.\n" +
+                        "O regime de juros compostos é o mais comum no sistema financeiro e o mais útil para cálculos de problemas do dia-a-dia.<br><br>\n" +
                         "\n" +
-                        "Cetero perfecto eu mel, et est case aliquid. Pri eu putent iisque pertinax, everti nominati instructior ei mei. Vide iusto voluptaria cu has. His dissentias accommodare ea, sea epicuri offendit ne, vulputate voluptatum sit id.</p>"
-                    + ""
-                    + "<p><a href=\"#\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Compostos</a></p>"
-                    + ""
-                    + ""
+                        "O atual sistema financeiro utiliza o regime de juros compostos, pois ele oferece uma maior rentabilidade quando comparado ao regime de juros simples, uma vez que juros compostos incidem mês a mês, de acordo com o somatório acumulativo do capital com o rendimento mensal.\n" +
+                        "\n" +
+                        "Juros compostos são muito usados no comércio, como em bancos. Os juros compostos são utilizados na remuneração das cadernetas de poupança, e é conhecido como “juro sobre juro”.\n" +
+                        "\n" +
+                        "Os juros compostos em disciplinas de matemática financeira, geralmente são calculados e aprendidos com a utilização da calculadora HP 12C, mas também é possível resolver seus cálculos e a fórmula no Excel.</p>"
+
+                                            + "<p><a href=\"#\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Compostos</a></p>"
+                    
+                    + "</div>"
+                    + "<div class='container'>"
+                    + "<h2 style='text-align:center;'>Equipe</h2>"
+                        + "<div class='row' style='margin-top:30px; margin-left: 50px;'>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Vinícius Lima</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Karin</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Vitor Jesus</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Ernandes Papa</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Stanislaw Wielizcko</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                        + "</div>"
+                    + "</div>"
+
                     + "");
  
      
