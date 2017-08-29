@@ -10,6 +10,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+            #menu{
+                clear:both;
+            }
             ul{
     list-style-type: none;
     margin: 2px;
@@ -33,10 +36,22 @@ li a {
 li a:hover {
     background-color: FireBrick;
 }
+p{
+    text-align: justify;
+    font-family: Arial;
+}
+#cabeçalho{
+    display:block;
+    margin:auto;
+    float:left;
+}
         </style>
     </head>
     <body>
-        <h1 align="center">Projeto POO Juros</h1>
+        <div id="cabeçalho">
+        <img src="bannerFatec.jpg" alt="banner"  height="80px" style="float:left">
+        <h1 style="float:left" width:60%>Projeto POO Juros</h1>
+        </div>
         <div id="menu">
             <ul>
                 <li><a href="home.html">Home  </a></li>
@@ -44,5 +59,11 @@ li a:hover {
                 <li><a href="juros-composto.html" >Juros Composto</a></li>
             </ul>
         </div>
+        <h2>Juros Simples:</h2>
+       <p>O regime de juros simples não é muito utilizado pelo atual sistema financeiro nacional, mas ele se relaciona à cobrança em financiamentos, compras a prazo, impostos atrasados, aplicações bancárias, etc. Nesse regime, a taxa de juros é somada ao capital inicial durante o período da aplicação.</p>
+        <h2>Juros Composto:</h2>
+        <p>Esse regime é utilizado amplamente pelo sistema financeiro, no dia a dia e em diversos cálculos econômicos. Os juros são gerados em cada período e acrescentados ao capital principal para o cálculo dos juros no período posterior.
+
+Nesse regime, diz-se que os juros são capitalizados, pois a cada período o juro é adicionado ao capital inicial. Assim, não existe capitalização no regime de juros simples, pois apenas o capital inicial rende juros.</p>
     </body>
 </html>

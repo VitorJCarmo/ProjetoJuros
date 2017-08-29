@@ -48,6 +48,7 @@ public class CompostoServlet extends HttpServlet {
             out.println("<title>Juros Compostos</title>");            
             out.println("</head>");
             out.println("<style>");
+            out.println("#menu{clear:both;}");
             out.println("ul{list-style-type: none;margin: 2px;padding: 2px;overflow: hidden;background-color: #333;text-align: center;}");
             out.println("li {text-align: center;display: inline;}");
             out.println("a {color: white;text-align: center;padding: 4px 4px;text-decoration: none;}");
@@ -55,7 +56,8 @@ public class CompostoServlet extends HttpServlet {
             out.println("#main{margin-left:600px;margin-top:200px}");
             out.println("</style>");
             out.println("<body>");
-            out.println("<h1 align='center'>Cálculo de Juros Simples</h1>");
+            out.println("<img src='bannerFatec.jpg' alt='banner'  height='80px' style='float:left'>");
+            out.println("<h1 style='float:left'>Cálculo de Juros Compostos</h1>");
             out.println("<div id='menu'>");
             out.println("<ul>");
             out.println("<li><a href='home.html'>Home  </a></li>");
@@ -64,8 +66,7 @@ public class CompostoServlet extends HttpServlet {
             out.println("</ul>");
             out.println("</div>");
             
-            out.println("<body>");
-            out.println("<h1>Cálculo de Juros Compostos</h1>");
+            out.println("</body>");
             out.println("<div style='float:left; margin-right: 200px;'>");
             out.println("<form>");
             out.println("<p>Capital: <input required type='number' min='0' name='c' step='0.01'> ");

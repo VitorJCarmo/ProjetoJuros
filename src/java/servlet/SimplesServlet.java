@@ -40,6 +40,7 @@ public class SimplesServlet extends HttpServlet {
             out.println("<title>Servlet SimplesServlet</title>");            
             out.println("</head>");
             out.println("<style>");
+            out.println("#menu{clear:both;}");
             out.println("ul{list-style-type: none;margin: 2px;padding: 2px;overflow: hidden;background-color: #333;text-align: center;}");
             out.println("li {text-align: center;display: inline;}");
             out.println("a {color: white;text-align: center;padding: 4px 4px;text-decoration: none;}");
@@ -47,7 +48,8 @@ public class SimplesServlet extends HttpServlet {
             out.println("#main{margin-left:600px;margin-top:200px}");
             out.println("</style>");
             out.println("<body>");
-            out.println("<h1 align='center'>Cálculo de Juros Simples</h1>");
+            out.println("<img src=\"bannerFatec.jpg\" alt=\"banner\"  height=\"80px\" style=\"float:left\">");
+            out.println("<h1 align='center' style='float:left'>Cálculo de Juros Simples</h1>");
             out.println("<div id='menu'>");
             out.println("<ul>");
             out.println("<li><a href='home.html'>Home  </a></li>");
@@ -64,9 +66,9 @@ public class SimplesServlet extends HttpServlet {
             double par=0;
             String mensagem="";
             out.println("<form>");
-            out.println("<p>Capital: <input type='text' name='cap'> ");
-            out.println("<p>Taxa de Juros (% ao mês): <input type='text' name='taxa'> ");
-             out.println("<p>Tempo total (meses): <input type='text' name='par'>");
+            out.println("<p>Capital: <input required type='number' min='0' step='0.01' name='cap'> ");
+            out.println("<p>Taxa de Juros (% ao mês): <input required type='number' min='0.1' step='0.01' name='taxa'> ");
+             out.println("<p>Tempo total (meses): <input required type='number' min='1' step='0.01' name='par'>");
              out.println("<p><input type='submit' value='Calcular'></p>");
              out.println("</form>");
                                     
