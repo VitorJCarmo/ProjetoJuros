@@ -48,7 +48,7 @@ public class NovaHomeServlet extends HttpServlet {
             out.println("<body>");
             
             out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
-                            "    <a href=\"/\" class=\"navbar-brand d-flex w-50 mr-auto\">Calculadora de Juros</a>\n" +
+                            "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
                             "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
                             "        <span class=\"navbar-toggler-icon\"></span>\n" +
                             "    </button>\n" +
@@ -72,7 +72,7 @@ public class NovaHomeServlet extends HttpServlet {
                             "    </div>\n" +
                             "</nav>");
             
-            out.println("<div class='container-fluid'>"
+            out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
                     + "<div class='container'>"
                     + "<h2>Juros Simples</h2>"
                     + "<p>O    O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. Valor Principal ou simplesmente principal é o valor inicial emprestado ou aplicado, antes de somarmos os juros. </p>"
@@ -99,7 +99,7 @@ public class NovaHomeServlet extends HttpServlet {
                     + "</div>"
                     + "<div class='container'>"
                     + "<h2 style='text-align:center;'>Equipe</h2>"
-                        + "<div class='row' style='margin-top:30px; margin-left: 50px;'>"
+                        + "<div class='row' style='margin-top:30px; margin-left: 70px;'>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
                                  + "<div class='card' style='width: 10rem;'>"
                                  + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
@@ -148,7 +148,11 @@ public class NovaHomeServlet extends HttpServlet {
                         + "</div>"
                     + "</div>"
 
-                    + "");
+                    
+                    + "</div>"
+                    
+                    
+                    + "<h6 style='text-align:center; margin-top: 5px;'>FATEC-PG ADS 4º Ciclo Noturno</h6>");
  
      
 
