@@ -1,0 +1,39 @@
+body {
+	background-color: #74bf7d;
+}
+
+.container-fluid {
+	background-color: #c1f4c1
+}
+
+.container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+h2 {
+	padding-top: 20px;
+	
+}
+
+.btn-outlined {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.btn-outlined.btn-success {
+    background: none;
+    border: 3px solid #5cb85c;
+    color: black;
+}
+.btn-outlined.btn-success:hover,
+.btn-outlined.btn-success:active {
+    color: #FFF;
+    background: #47a447;
+}
+
+.btn {
+
+}
