@@ -1,5 +1,6 @@
 body {
 	background-color: #74bf7d;
+	font-family: 'Roboto', sans-serif;
 }
 
 .container-fluid {
@@ -13,6 +14,7 @@ body {
 
 h2 {
 	padding-top: 20px;
+	padding-bottom: 5px;
 	
 }
 
