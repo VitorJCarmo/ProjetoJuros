@@ -103,10 +103,10 @@ public class SimplesServlet extends HttpServlet {
                     mensagem += "Valor das parcelas inválido <br>";
                    
              }
-             Mont = (cap*(1+((taxa/100)*par)));
-             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
-             out.println("<h3 style='color:red;'>Montante:  "+Mont+"</h3>");
-             out.println("<h3><a href='index.html'>Voltar</h3>");
+            Mont = (cap*(1+((taxa/100)*par)));
+            out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
+            out.println("<h3 style='color:red;'>Montante:  "+Mont+"</h3>");
+            out.println("<a href='index.html' style='color:Navy'>Ir para index</a>");
             out.println("</body>");
             out.println("</html>");
         }

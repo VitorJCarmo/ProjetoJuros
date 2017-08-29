@@ -88,7 +88,7 @@ public class CompostoServlet extends HttpServlet {
             }
 
             out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
-            out.println("<h3><a href='index.html'>Voltar</a></h3>");
+            out.println("<a href='index.html' style='color:Navy' >Ir para index</a>");
             out.println("</div>");
             
             //Exibição da tabela
@@ -110,10 +110,9 @@ public class CompostoServlet extends HttpServlet {
                 if (ct==t) {
                     out.println("<tr><td>Total:</td><td>R$ "+df.format(jt)+"</td><td>R$ "+df.format(mt)+"</td>");
                 }
-            }
-                       
+            }           
             out.println("<table>");
-            out.println("</div>");            
+            out.println("</div>"); 
             out.println("</body>");
             out.println("</html>");
         }
