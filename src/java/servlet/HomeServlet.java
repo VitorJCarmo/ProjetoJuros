@@ -147,7 +147,7 @@ public class HomeServlet extends HttpServlet {
                                  + "<div class='card' style='width: 10rem;'>"
                                  + "<img class=\"card-img-top\" src=\"stanislaw.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
-                                        "    <h4 class=\"card-title\">Stanislaw Wielizcko</h4>\n" +
+                                        "    <h4 class=\"card-title\">Stanislaw wieliczko</h4>\n" +
                                         "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
