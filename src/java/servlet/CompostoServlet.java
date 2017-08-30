@@ -34,85 +34,98 @@ public class CompostoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            double m, c, i, t, ctotal,j,jant,jt,mt;
-            DecimalFormat df = new DecimalFormat("#,###.00");
+            double m, c, i, t, p;
+            DecimalFormat df = new DecimalFormat("0.00");
+            m = c = i = t = p = 0;
             
-            ctotal = m = c = i = t = j = jant = jt = mt = 0;
-           
-            
-            String mensagem;
-            mensagem = "";
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Juros Compostos</title>");            
+            out.println("<title>Servlet NovaCompostoServlet</title>"
+             + "<link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">");      
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
+            out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/styleHome.css' />");
+            out.println("<meta charset=\"utf-8\">\n" +
+            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");            
             out.println("</head>");
-            out.println("<style>");
-            out.println("#menu{clear:both;}");
-            out.println("ul{list-style-type: none;margin: 2px;padding: 2px;overflow: hidden;background-color: #333;text-align: center;}");
-            out.println("li {text-align: center;display: inline;}");
-            out.println("a {color: white;text-align: center;padding: 4px 4px;text-decoration: none;}");
-            out.println ("li a:hover {background-color: FireBrick;}");
-            out.println("#main{margin-left:600px;margin-top:200px}");
-            out.println("</style>");
             out.println("<body>");
-            out.println("<img src='bannerFatec.jpg' alt='banner'  height='80px' style='float:left'>");
-            out.println("<h1 style='float:left'>Cálculo de Juros Compostos</h1>");
-            out.println("<div id='menu'>");
-            out.println("<ul>");
-            out.println("<li><a href='home.html'>Home  </a></li>");
-            out.println("<li><a href='juros-simples.html' >Juros Simples  </a></li>");
-            out.println("<li><a href='juros-composto.html' >Juros Composto</a></li>");
-            out.println("</ul>");
-            out.println("</div>");
-            
-            out.println("</body>");
-            out.println("<div style='float:left; margin-right: 200px;'>");
-            out.println("<form>");
-            out.println("<p>Capital: <input required type='number' min='0' name='c' step='0.01'> ");
-            out.println("<p>Taxa de Juros (% ao mês): <input required type='number' min='0' name='i' step='0.01'> ");
-            out.println("<p>Tempo total (meses): <input required type='number' min='1' name='t' step='0.01'>");
-            out.println("<p><input required type='submit' value='Calcular'></p>");
-            out.println("</form>");
-   
-            //Tratamento de erros e atribuição dos valores às variáveis
-            try {
-                if (request.getParameter("c") != null && request.getParameter("i") != null && request.getParameter("t") != null )
-                   c = Double.parseDouble(request.getParameter("c"));
-                   i = Double.parseDouble(request.getParameter("i"));
-                   t = Double.parseDouble(request.getParameter("t"));
-                   i = i/100;
-            }
-            catch (Exception ex) {
-                out.println("<h3 style='color:red'>Preencha os campos corretamente!</h3>");
-            }
+                out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
+                            "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
+                            "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
+                            "        <span class=\"navbar-toggler-icon\"></span>\n" +
+                            "    </button>\n" +
+                            "    <div class=\"navbar-collapse collapse\" id=\"collapsingNavbar3\">\n" +
+                            "        <ul class=\"navbar-nav mx-auto w-100 justify-content-center\">\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "                <a class=\"nav-link\" href=\"home.html\">Home</a>\n" +
+                            "            </li>\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "                <a class=\"nav-link\" href=\"juros-simples.html\">Juros Simples</a>\n" +
+                            "            </li>\n" +
+                            "            <li class=\"nav-item active\">\n" +
+                            "                <a class=\"nav-link\" href=\"juros-composto.html\">Juros Composto</a>\n" +
+                            "            </li>\n" +
+                            "        </ul>\n" +
+                            "        <ul class=\"nav navbar-nav ml-auto w-100 justify-content-end\">\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "            </li>\n" +
 
-            out.println("<h3 style='color:red;'>"+mensagem+"</h3>");
-            out.println("<a href='index.html' style='color:Navy' >Ir para index</a>");
-            out.println("</div>");
-            
-            //Exibição da tabela
-            out.println("<div>");
-            out.println("<table table border='1'>");
-            out.println("<tr><th>Mês</th> <th>Juros</th> <th>Montante</th></tr>");
-            
-            for (int ct = 1; ct <= t; ct++){
-                ctotal = c * Math.pow((1+i),ct);
-                j = ctotal - c;
-                out.println("<tr><td>"+ct+"</td> <td>R$ "+ df.format(j - jant) +" </td><td>R$ "+ df.format(ctotal)+"</td>");
-                mt += ctotal;
+                            "        </ul>\n" +
+                            "    </div>\n" +
+                            "</nav>");
                 
-                //jant = juros anterior;
-                //jt = juros total
-                jt += j - jant;
-                jant = j;
                 
-                if (ct==t) {
-                    out.println("<tr><td>Total:</td><td>R$ "+df.format(jt)+"</td><td>R$ "+df.format(mt)+"</td>");
-                }
-            }           
-            out.println("<table>");
-            out.println("</div>"); 
+            out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
+                            + "<div class='container'>" 
+                                + "<form>"
+                                    + "<div class='form-row'>"
+                                        + "<div class='form-group col-md-4'>"
+                                             + "<label for='inputCapital' style='font-size: 150%;' class='col-form-label'>Capital (R$)</label>"
+                                                    + "<input required min='0' step='0.01' type='number' class='form-control' id='inputCapital' placeholder='Capital Inicial' name='c'>"
+                                        + "</div>"
+                                        + "<div class='form-group col-md-4'>"
+                                             + "<label for='inputTaxa' style='font-size: 150%;' class='col-form-label'>Taxa de Juros (% ao mês)</label>"
+                                                    + "<input required min='0' step='0.0001' type='number' class='form-control' id='inputTaxa' placeholder='Taxa de Juros ao mês' name='i'>"
+                                        + "</div>"
+                                        + "<div class='form-group col-md-4'>"
+                                             + "<label for='inputTempo' style='font-size: 150%;' class='col-form-label'>Tempo total (meses)</label>"
+                                                    + "<input required min='1' step='1' type='number' class='form-control' id='inputTempo' placeholder='Capital Inicial' name='t'>"
+                                        + "</div>"
+                                    + "</div>"
+                                    + "<p><input type='submit' value='Calcular Juros Composto' class=\"btn btn-outlined btn-block btn-success\"></p>"
+                                + "</form>");
+                                
+                                if (request.getParameter("c") != null && request.getParameter("i") != null && request.getParameter("t") != null ) {
+                                    c = Double.parseDouble(request.getParameter("c"));
+                                    i = Double.parseDouble(request.getParameter("i"));
+                                    t = Double.parseDouble(request.getParameter("t"));
+                                    i = i/100;
+                                    out.println("<table class='table table-striped '>"
+                                         + "<tr >"
+                                            + "<th class='text-center'>Mês</th>"
+                                            + "<th class='text-center' style='padding-left: 120px;'>Juros</th>"
+                                            + "<th class='text-center'>Montante</th>"
+                                        + "</tr>");
+                                }   
+                                
+                                 
+            m=c;
+            p = (1+i);
+            for (int ct = 1; ct <= t; ct++){  
+                    out.println("<tr><td class='text-center'>"+ct+"</td><td class='text-center' style='padding-left: 120px;'>R$"+df.format((i*m))+"</td><td class='text-center'>R$"+df.format((m * p))+"</td>");
+                    m = m*p;
+            }    
+            
+            out.println("</table>"
+                    + "</div>"
+                    + "</div>"
+                    + "<a href='http://www.fatecpg.com.br/default.aspx' target='_blank'><img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
+            
+            
+            
+            out.println("<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\n" +
+            "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js\" integrity=\"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4\" crossorigin=\"anonymous\"></script>\n" +
+            "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js\" integrity=\"sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1\" crossorigin=\"anonymous\"></script>");
             out.println("</body>");
             out.println("</html>");
         }
