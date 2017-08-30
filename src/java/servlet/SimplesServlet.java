@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DecimalFormat; 
 
 /**
  *
@@ -37,7 +38,8 @@ public class SimplesServlet extends HttpServlet {
             double cap=0;
             double taxa=0;
             double par=0;
-            String mensagem="";
+            
+            DecimalFormat df = new DecimalFormat("0.00");
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -108,7 +110,7 @@ public class SimplesServlet extends HttpServlet {
                 Mont = (cap*(1+((taxa/100)*par)));
              
                 //Exibição do valor do montante
-                                out.println("<h3 style='text-align: center; font-size: 230%; padding: 15px 0px;'>Montante: R$"+Mont+"</h3>"
+                                out.println("<h3 style='text-align: center; font-size: 230%; padding: 15px 0px;'>Montante: R$"+df.format(Mont)+"</h3>"
                                     + "<hr style='border: 1px solid lightgreen;'>");
                         out.println("</div>");
                      out.println("</div>"
