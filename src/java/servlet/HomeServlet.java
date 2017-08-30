@@ -136,7 +136,7 @@ public class HomeServlet extends HttpServlet {
                             + "</div>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
                                  + "<div class='card' style='width: 10rem;'>"
-                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                 + "<img class=\"card-img-top\" src=\"ernandes.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
                                         "    <h4 class=\"card-title\">Ernandes Papa</h4>\n" +
                                        
