@@ -38,7 +38,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NovaHomeServlet</title>"
+            out.println("<title>Home - Calculadora de Juros</title>"
                     + "<link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">");      
             out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
             out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/styleHome.css' />");
@@ -71,12 +71,18 @@ public class HomeServlet extends HttpServlet {
 
                             "        </ul>\n" +
                             "    </div>\n" +
-                            "</nav>");
+                            "</nav>"
+                                + "<div class='jumbotron jumbotron-fluid' id='jumbo'>\n" +
+                                           "  <div class=\"container\">\n" +
+                                           "    <h1 class=\"display-3\">Calculadora de Juros</h1>\n" +
+                                           
+                                           "  </div>\n" +
+                                     "</div>");
             
             out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
                     + "<div class='container'>"
                     + "<h2>Juros Simples</h2>"
-                    + "<p>O    O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. Valor Principal ou simplesmente principal é o valor inicial emprestado ou aplicado, antes de somarmos os juros. </p>"
+                    + "<p>O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. Valor Principal ou simplesmente principal é o valor inicial emprestado ou aplicado, antes de somarmos os juros. </p>"
 
                     + "<p><a href=\"juros-simples.html\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Simples</a></p>"
 
@@ -100,31 +106,31 @@ public class HomeServlet extends HttpServlet {
                     + "</div>"
                     + "<div class='container'>"
                     + "<h2 style='text-align:center;'>Equipe</h2>"
-                        + "<div class='row' style='margin-top:30px; margin-left: 70px;'>"
+                        + "<div class='row cartao' style='margin-top:30px; margin-left: 70px;'>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
                                  + "<div class='card' style='width: 10rem;'>"
-                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                 + "<img class=\"card-img-top\" src=\"vinicius.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
                                         "    <h4 class=\"card-title\">Vinícius Lima</h4>\n" +
-                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
                             + "</div>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
-                                 + "<div class='card' style='width: 10rem;'>"
-                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                 + "<div class='card ' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"karin.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
-                                        "    <h4 class=\"card-title\">Karin</h4>\n" +
-                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "    <h4 class=\"card-title\">Karin Cristine</h4>\n" +
+                                        "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
                             + "</div>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
                                  + "<div class='card' style='width: 10rem;'>"
-                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                 + "<img class=\"card-img-top\" src=\"vitor.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
                                         "    <h4 class=\"card-title\">Vitor Jesus</h4>\n" +
-                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
                             + "</div>"
@@ -133,16 +139,16 @@ public class HomeServlet extends HttpServlet {
                                  + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
                                         "    <h4 class=\"card-title\">Ernandes Papa</h4>\n" +
-                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                       
                                         "  </div>"
                                  + "</div>"
                             + "</div>"
                             + "<div class='col-sm-2' style='padding-left:50px;'>"
                                  + "<div class='card' style='width: 10rem;'>"
-                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                 + "<img class=\"card-img-top\" src=\"stanislaw.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
                                         "    <h4 class=\"card-title\">Stanislaw Wielizcko</h4>\n" +
-                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
                             + "</div>"
