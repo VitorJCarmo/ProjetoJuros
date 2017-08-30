@@ -34,24 +34,135 @@ public class HomeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>"); 
-            out.println("<style>");
-            out.println("<title>Home Servlet</title>");  
-            out.println("#main{ margin-left: 500px}");
-            out.println("</style>");   
+            out.println("<head>");
+            out.println("<title>Servlet NovaHomeServlet</title>"
+                    + "<link href=\"https://fonts.googleapis.com/css?family=Roboto\" rel=\"stylesheet\">");      
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
+            out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/styleHome.css' />");
+            out.println("<meta charset=\"utf-8\">\n" +
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");
+            
             out.println("</head>");
             out.println("<body>");
-            out.println("<div id='main'>");
-            out.println("<h1 align='center'>Grupo Projeto POO:</h1>");
-            out.println("<h3 align='center'>Ernandes Roberto Papa Braga</h3>");
-            out.println("<h3 align='center'>Karin Cristine Martins Santos</h3>");
-            out.println("<h3 align='center'>Stanislaw Manta Wieliczko</h3>");
-            out.println("<h3 align='center'>Vitor Jesus do Carmo | RA : 1290481613045</h3>");
-            out.println("<h3 align='center'>Vinicius Lima de Almeida</h3>");
-            out.println("<h5 align='center'><a href='index.html' >Ir para index</a></h5>");
-            out.println("</div>");
+            
+            out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
+                            "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
+                            "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
+                            "        <span class=\"navbar-toggler-icon\"></span>\n" +
+                            "    </button>\n" +
+                            "    <div class=\"navbar-collapse collapse\" id=\"collapsingNavbar3\">\n" +
+                            "        <ul class=\"navbar-nav mx-auto w-100 justify-content-center\">\n" +
+                            "            <li class=\"nav-item active\">\n" +
+                            "                <a class=\"nav-link\" href=\"home.html\">Home</a>\n" +
+                            "            </li>\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "                <a class=\"nav-link\" href=\"juros-simples.html\">Juros Simples</a>\n" +
+                            "            </li>\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "                <a class=\"nav-link\" href=\"juros-composto.html\">Juros Composto</a>\n" +
+                            "            </li>\n" +
+                            "        </ul>\n" +
+                            "        <ul class=\"nav navbar-nav ml-auto w-100 justify-content-end\">\n" +
+                            "            <li class=\"nav-item\">\n" +
+                            "            </li>\n" +
+
+                            "        </ul>\n" +
+                            "    </div>\n" +
+                            "</nav>");
+            
+            out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
+                    + "<div class='container'>"
+                    + "<h2>Juros Simples</h2>"
+                    + "<p>O    O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. Valor Principal ou simplesmente principal é o valor inicial emprestado ou aplicado, antes de somarmos os juros. </p>"
+
+                    + "<p><a href=\"juros-simples.html\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Simples</a></p>"
+
+                    + "<h2>Juros Composto</h2>"
+                    + "<p>Juros compostos são os juros de um determinado período somados ao capital para o cálculo de novos juros nos períodos seguintes.\n" +
+                        "\n" +
+                        "Juros compostos fazem parte de disciplinas e conceitos de matemática financeira, e esses juros são representados através de um percentual.<br><br>\n" +
+                        "\n" +
+                        "A fórmula de juros compostos pode ser escrita através da remuneração cobrada pelo empréstimo de dinheiro. O valor da dívida é sempre corrigido e a taxa de juros é calculada sobre esse valor.\n" +
+                        "\n" +
+                        "O regime de juros compostos é o mais comum no sistema financeiro e o mais útil para cálculos de problemas do dia-a-dia.<br><br>\n" +
+                        "\n" +
+                        "O atual sistema financeiro utiliza o regime de juros compostos, pois ele oferece uma maior rentabilidade quando comparado ao regime de juros simples, uma vez que juros compostos incidem mês a mês, de acordo com o somatório acumulativo do capital com o rendimento mensal.\n" +
+                        "\n" +
+                        "Juros compostos são muito usados no comércio, como em bancos. Os juros compostos são utilizados na remuneração das cadernetas de poupança, e é conhecido como “juro sobre juro”.\n" +
+                        "\n" +
+                        "Os juros compostos em disciplinas de matemática financeira, geralmente são calculados e aprendidos com a utilização da calculadora HP 12C, mas também é possível resolver seus cálculos e a fórmula no Excel.</p>"
+
+                                            + "<p><a href=\"juros-composto.html\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Compostos</a></p>"
+                    
+                    + "</div>"
+                    + "<div class='container'>"
+                    + "<h2 style='text-align:center;'>Equipe</h2>"
+                        + "<div class='row' style='margin-top:30px; margin-left: 70px;'>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Vinícius Lima</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Karin</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Vitor Jesus</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Ernandes Papa</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                            + "<div class='col-sm-2' style='padding-left:50px;'>"
+                                 + "<div class='card' style='width: 10rem;'>"
+                                 + "<img class=\"card-img-top\" src=\"user.png\" alt=\"Card image cap\">\n" +
+                                        "  <div class=\"card-body\">\n" +
+                                        "    <h4 class=\"card-title\">Stanislaw Wielizcko</h4>\n" +
+                                        "    <p class=\"card-text\">CEO</p>\n" +
+                                        "  </div>"
+                                 + "</div>"
+                            + "</div>"
+                        + "</div>"
+                    + "</div>"
+
+                    
+                    + "</div>"
+                    
+                    
+                    + "<a href='http://www.fatecpg.com.br/default.aspx' target='_blank'><img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
+ 
+     
+
+                   
+            
+            
+            out.println("<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\n" +
+            "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js\" integrity=\"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4\" crossorigin=\"anonymous\"></script>\n" +
+            "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js\" integrity=\"sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1\" crossorigin=\"anonymous\"></script>");
             out.println("</body>");
             out.println("</html>");
         }
