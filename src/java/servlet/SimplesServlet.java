@@ -51,6 +51,7 @@ public class SimplesServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
+            //Barra de navegação
             out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
                             "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
                             "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
@@ -76,6 +77,7 @@ public class SimplesServlet extends HttpServlet {
                             "    </div>\n" +
                             "</nav>");
             
+            //Container principal com o form
             out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
                             + "<div class='container'>" 
                                 + "<form>"
@@ -95,18 +97,21 @@ public class SimplesServlet extends HttpServlet {
                                     + "</div>"
                                     + "<p><input type='submit' value='Calcular Juros Simples' class=\"btn btn-outlined btn-block btn-success\"></p>"
                                 + "</form>");
-
+            //Atribuição dos dados às variáveis
                 if (request.getParameter("cap") != null && request.getParameter("taxa") != null && request.getParameter("par") != null ){
                    cap = Double.parseDouble(request.getParameter("cap"));
                    taxa = Double.parseDouble(request.getParameter("taxa"));
                    par = Double.parseDouble(request.getParameter("par"));
                 }
+            //Cálculo do Juros Simples
                 Mont = (cap*(1+((taxa/100)*par)));
-                
+             
+                //Exibição do valor do montante
                                 out.println("<h3 style='text-align: center; font-size: 230%; padding: 15px 0px;'>Montante: R$"+cap+"</h3>"
                                     + "<hr style='border: 1px solid lightgreen;'>");
                         out.println("</div>");
                      out.println("</div>"
+                             //Footer
                              + "<a href='http://www.fatecpg.com.br/default.aspx' target='blank'><img style='padding-top: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
 
             out.println("<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\n" +

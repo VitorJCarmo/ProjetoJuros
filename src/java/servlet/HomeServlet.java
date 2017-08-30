@@ -47,7 +47,7 @@ public class HomeServlet extends HttpServlet {
             
             out.println("</head>");
             out.println("<body>");
-            
+            //Barra de navegação com o HOME ativo.
             out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
                             "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
                             "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
@@ -72,13 +72,14 @@ public class HomeServlet extends HttpServlet {
                             "        </ul>\n" +
                             "    </div>\n" +
                             "</nav>"
+                                //Banner
                                 + "<div class='jumbotron jumbotron-fluid' id='jumbo'>\n" +
                                            "  <div class=\"container\">\n" +
                                            "    <h1 class=\"display-3\">Calculadora de Juros</h1>\n" +
                                            
                                            "  </div>\n" +
                                      "</div>");
-            
+            //Container principal
             out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
                     + "<div class='container'>"
                     + "<h2>Juros Simples</h2>"
@@ -102,7 +103,7 @@ public class HomeServlet extends HttpServlet {
                         "Os juros compostos em disciplinas de matemática financeira, geralmente são calculados e aprendidos com a utilização da calculadora HP 12C, mas também é possível resolver seus cálculos e a fórmula no Excel.</p>"
 
                                             + "<p><a href=\"juros-composto.html\" class=\"btn btn-outlined btn-block btn-success\">Calcular Juros Compostos</a></p>"
-                    
+                    //Container com os cards da equipe
                     + "</div>"
                     + "<div class='container'>"
                     + "<h2 style='text-align:center;'>Equipe</h2>"
@@ -147,7 +148,7 @@ public class HomeServlet extends HttpServlet {
                                  + "<div class='card' style='width: 10rem;'>"
                                  + "<img class=\"card-img-top\" src=\"stanislaw.png\" alt=\"Card image cap\">\n" +
                                         "  <div class=\"card-body\">\n" +
-                                        "    <h4 class=\"card-title\">Stanislaw wieliczko</h4>\n" +
+                                        "    <h4 class=\"card-title\">Stanislaw Wieliczko</h4>\n" +
                                         "    <p class=\"card-text\"></p>\n" +
                                         "  </div>"
                                  + "</div>"
@@ -158,7 +159,7 @@ public class HomeServlet extends HttpServlet {
                     
                     + "</div>"
                     
-                    
+                    //Footer
                     + "<a href='http://www.fatecpg.com.br/default.aspx' target='_blank'><img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
  
      

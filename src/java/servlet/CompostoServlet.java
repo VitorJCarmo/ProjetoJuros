@@ -49,6 +49,7 @@ public class CompostoServlet extends HttpServlet {
             "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");            
             out.println("</head>");
             out.println("<body>");
+            //Barra de navegação com o Juros Composto ativo.
                 out.println("<nav class=\"navbar navbar-light navbar-expand-md bg-faded justify-content-center\">\n" +
                             "    <a href=\"NovaHomeServlet.html\" class=\"navbar-brand d-flex w-50 mr-auto\"><img src='dollar.png' width=\"40\" height=\"40\"></a>\n" +
                             "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsingNavbar3\">\n" +
@@ -74,7 +75,7 @@ public class CompostoServlet extends HttpServlet {
                             "    </div>\n" +
                             "</nav>");
                 
-                
+             //Container principal com o formulário e 3 inputs para coletar dados.   
             out.println("<div class='container-fluid' style='padding-bottom:30px;'>"
                             + "<div class='container'>" 
                                 + "<form>"
@@ -94,7 +95,8 @@ public class CompostoServlet extends HttpServlet {
                                     + "</div>"
                                     + "<p><input type='submit' value='Calcular Juros Composto' class=\"btn btn-outlined btn-block btn-success\"></p>"
                                 + "</form>");
-                                
+            
+                                //Atribuição dos dados às variáveis
                                 if (request.getParameter("c") != null && request.getParameter("i") != null && request.getParameter("t") != null ) {
                                     c = Double.parseDouble(request.getParameter("c"));
                                     i = Double.parseDouble(request.getParameter("i"));
@@ -108,7 +110,7 @@ public class CompostoServlet extends HttpServlet {
                                         + "</tr>");
                                 }   
                                 
-                                 
+                                // Cálculo do Juros Composto
             m=c;
             p = (1+i);
             for (int ct = 1; ct <= t; ct++){  
@@ -119,9 +121,10 @@ public class CompostoServlet extends HttpServlet {
             out.println("</table>"
                     + "</div>"
                     + "</div>"
+                                //Footer
                     + "<a href='http://www.fatecpg.com.br/default.aspx' target='_blank'><img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
             
-            
+                               
             
             out.println("<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\n" +
             "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js\" integrity=\"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4\" crossorigin=\"anonymous\"></script>\n" +
