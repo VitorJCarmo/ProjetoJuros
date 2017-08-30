@@ -108,7 +108,7 @@ public class SimplesServlet extends HttpServlet {
                 Mont = (cap*(1+((taxa/100)*par)));
              
                 //Exibição do valor do montante
-                                out.println("<h3 style='text-align: center; font-size: 230%; padding: 15px 0px;'>Montante: R$"+cap+"</h3>"
+                                out.println("<h3 style='text-align: center; font-size: 230%; padding: 15px 0px;'>Montante: R$"+Mont+"</h3>"
                                     + "<hr style='border: 1px solid lightgreen;'>");
                         out.println("</div>");
                      out.println("</div>"
