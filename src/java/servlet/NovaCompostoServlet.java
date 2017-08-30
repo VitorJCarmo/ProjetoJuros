@@ -120,7 +120,7 @@ public class NovaCompostoServlet extends HttpServlet {
             out.println("</table>"
                     + "</div>"
                     + "</div>"
-                    + "<img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'>");
+                    + "<a href='http://www.fatecpg.com.br/default.aspx' target='_blank'><img style='padding-top: 20px; padding-bottom: 20px; display: block; margin: 0 auto;' src='logotipo-fatec-pg.png' width='200' heigth='150'></a>");
             
             
             
